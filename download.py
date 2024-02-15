@@ -62,11 +62,8 @@ def get_json_transcript( url ):
 
 def save_transcript(transcript, filename, format_as_json=True):
     """Save the transcript to a file"""
-    if not filename.endswith(".json") and format_as_json:
-        filename += ".json"
-
     if transcript is None:
-        raise ValueError("Transcript is empty")
+        raise ValueError("Error, no transcript to save")
 
     with open(filename, "w") as f:
         if format_as_json:
